@@ -7,6 +7,11 @@ The main idea is that there are three different Docker containers, and each one 
 - **server-sr** This one contains a server that uses the [vosk-api](https://github.com/alphacep/vosk-api) to perform offline speech recognition.
 - **server-lg** This is the server that tries to identify which object is the required from the image with the provided description using the software [zsgnet](https://github.com/TheShadow29/zsgnet-pytorch).
 
+This is a small representation of the configuration for this project:
+
+![alt text](https://github.com/FioPio/pepper-language-grounding-system/blob/main/resources/nodesSetup.png?raw=true)
+
+
 # Installation
 The requirements for this project are:
 
@@ -98,3 +103,10 @@ After execution, you may recovery your original configuration with:
 ```
 xhost -
 ```
+
+
+# Demo
+
+There is a small demo using this project:
+
+[![Pepper language grounding system](https://img.youtube.com/watch?v=LLB2ebpyLgA/0.jpg)](https://www.youtube.com/watch?v=LLB2ebpyLgA "Pepper language grounding system")
