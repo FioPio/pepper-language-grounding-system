@@ -1,11 +1,11 @@
 # About this repo
 This repository holds the software implementation used to solve my master thesis **Language grounding for robotics** done in the University of Umeå. It tries to use the robot Pepper (from SoftBank Robotics) to perform language grounding offline. 
 
-The main idea is that there are three different Docker containers, and each one of them performs a different task:
+The main idea is that there are three different Docker containers, and each one performs a different task:
 
-- **pepper** This docker is the one that interacts with the robot Pepper using the Naoqi software.
-- **server-sr** This one contains a server that uses the [vosk-api](https://github.com/alphacep/vosk-api) to perform offline speech recognition.
-- **server-lg** This is the server that tries to identify which object is the required from the image with the provided description using the software [zsgnet](https://github.com/TheShadow29/zsgnet-pytorch).
+- **pepper** interacts with the robot Pepper using the Naoqi software.
+- **server-sr** contains a server that uses the [vosk-api](https://github.com/alphacep/vosk-api) to perform offline speech recognition.
+- **server-lg** is the server that tries to identify which object in the image is described with the query (it uses the software [zsgnet](https://github.com/TheShadow29/zsgnet-pytorch) ).
 
 This is a small representation of the configuration for this project:
 
@@ -40,7 +40,7 @@ After that, the public key must be copied into the Pepper computer. To obtain th
 docker run pepper cat /root/.ssh/id_rsa.pub
 ```
 
-Then copy the output and connect by ssh to the robot Pepper. If `/home/nao/.ssh/authorized_keys` exist, just open it and paste the content of your `id_rsa.pub`.
+Then copy the output and use ssh to connect to the robot Pepper. If `/home/nao/.ssh/authorized_keys` exists, just open it and paste the content of your `id_rsa.pub`.
 
 If the directory `.ssh` does not exist create it
 ```
@@ -60,7 +60,7 @@ chmod 600 /home/nao/.ssh/authorized_keys
 ```
 
 ## server-sr node
-To build this docker image first you need to download a model from [here](https://alphacephei.com/vosk/models) and extract it into `server-sr/`.  You should rename the directory that contains it to `model-en`.
+To build this docker image first you need to download a model from [here](https://alphacephei.com/vosk/models) and extract it into `server-sr/`.  You should rename the directory that contains  the model files to `model-en`.
 
 After that, the image may be built by entering into `server-sr/` and typing 
 ```
@@ -90,12 +90,12 @@ After that, the `server-sr` may be started:
 docker run -p 5002:5000 server-sr
 ```
 
-And once both servers are available, the node `pepper`may be started. First allow the docker container to connect to your screen
+And once both servers are running, the node `pepper`may be started. First allow the docker container to connect to your screen
 
 ```
 xhost +local:docker
 ```
-Then, in the same terminal run the container with:
+Then, in the same terminal start a container with:
 ```
 docker run --network host -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --env QT_X11_NO_MITSHM=1 pepper
 ``` 
