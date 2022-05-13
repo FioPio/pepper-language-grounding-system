@@ -9,7 +9,7 @@ The main idea is that there are three different Docker containers, and each one 
 
 This is a small representation of the configuration for this project:
 
-![alt text](https://github.com/FioPio/pepper-language-grounding-system/blob/main/resources/nodesSetup.png?raw=true)
+![alt text](https://github.com/FioPio/pepper-language-grounding-system/blob/main/resources/nodesSetupv2.png?raw=true)
 
 
 # Installation
