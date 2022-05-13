@@ -1,6 +1,3 @@
-README
-
-
 # About this repo
 This repository holds the software implementation used to solve my master thesis **Language grounding for robotics** done in the University of Umeå. It tries to use the robot Pepper (from SoftBank Robotics) to perform language grounding offline. 
 
