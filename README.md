@@ -109,4 +109,4 @@ xhost -
 
 There is a small demo using this project:
 
-[![Pepper language grounding system](https://img.youtube.com/watch?v=LLB2ebpyLgA/0.jpg)](https://www.youtube.com/watch?v=LLB2ebpyLgA "Pepper language grounding system")
+[![Pepper language grounding system](https://img.youtube.com/vi/LLB2ebpyLgA/0.jpg)](https://www.youtube.com/watch?v=LLB2ebpyLgA "Pepper language grounding system")
