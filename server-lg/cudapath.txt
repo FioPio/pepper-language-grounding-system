@@ -1,0 +1,6 @@
+# set PATH for cuda 10.0 installation  
+if [ -d "/usr/local/cuda-10.0/bin/" ]; then
+    export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_L\
+IBRARY_PATH}}
+fi
